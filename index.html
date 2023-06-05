@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/chalk.min.css">
+
+  <style>
+    pre code.hljs {
+      padding: 1em;
+      padding-top: 1em;
+
+    }
+
+
+
+    button {
+      cursor: pointer;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 4px;
+      position: absolute;
+      float: right;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #F2DEFE;
+      background-size: cover;
+    }
+
+    .conteudo {
+      background-color: #F2DEFE;
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .quadrado {
+      max-width: 55%;
+    }
+
+
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+      border-radius: 25%;
+      text-decoration: underline;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+      color: #845a85;
+      text-align: justify;
+
+    }
+
+    h3 {
+      font-size: 25px;
+      font-weight: bold;
+      color: #432c3e;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .destaque {
+      color: #f6464a;
+    }
+
+    .destaque2 {
+      color: blue;
+    }
+
+    span {
+      color: #f6464a;
+    }
+  </style>
+</head>
+
+<body class="fundo">
+  <div class="separar">
+    <div class="conteudo">
+      <div class="quadrado">
+        <h1>
+          Strings em JavaScript
+        </h1>
+        <br>
+        <h3 class="titulo">
+          O que é uma String?
+        </h3>
+        <p class="texto">
+          São sequências de caracteres alfanuméricos (letras, números e/ou símbolos) delimitados por aspas simples <span
+            class="destaque">‘exemplo’</span> ou aspas duplas <span class="destaque">“exemplo”</span>.
+          <br>
+        </p>
+
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var saudacao = "Olá!";                  
+    var nome = "Henning Summer";
+                    </code>
+                  </pre>
+        <p>
+          As strings podem conter qualquer combinação de caracteres, incluindo letras, números, espaços, símbolos e até
+          mesmo caracteres especiais, como acentos.
+        </p>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="Subtitulo">
+          <br>
+          Atenção aos Detalhes!
+        </h3>
+
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var  exe1 = 350;
+    var  exe2 = "350";
+                    </code>
+                  </pre>
+        <p class="texto">
+          No exemplo acima, por mais que o valor de ambas as variáveis seja o mesmo, essas variáveis possuem tipos
+          primitivos diferentes e não podem ser tratadas como iguais.
+          <br><br>A primeira var é do tipo Number e a segunda var é do tipo String. <span class="destaque">Atenção as
+            “aspas”</span>.
+
+
+        </p>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="titulo">
+          <br>
+          Aspas dentro de Aspas
+        </h3>
+        <p class="texto">
+          Em alguns momentos, a string poderá ser um texto que contém aspas. Nesses casos, é preciso combinar a
+          utilização das aspas ‘simples’ com “aspas duplas” e vice-versa.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var exe1 = 'Ela disse: "Adeus!"';
+    var exe2 = "Ela disse: 'Adeus!'";
+                    </code>
+                  </pre>
+        <h3 class="titulo">
+          <br>
+          <br>
+          Em JavaScript as Strings são imutáveis
+        </h3>
+        <p class="texto">
+          Uma vez que uma string é definida, ela não pode ser modificada. No entanto, existem formas de se manipular
+          strings criando novas strings com base na original. Para isso são utilizadas operações ou métodos de
+          manipulação de strings.
+        </p>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <br>
+        <h1>
+          <br>
+          Manipulando Strings
+        </h1>
+        <br>
+        <h3 class="titulo">
+          Convertendo os outros tipos primitivos em tipo string
+        </h3>
+        <p class="texto">
+          Lembrando que os tipos primitivos existentes em JavaScript são: <span class="destaque">Number</span>, <span
+            class="destaque">Boolean</span>, <span class="destaque">Null</span>, <span
+            class="destaque">Undefined</span>, <span class="destaque">Symbol</span>, além é claro do tipo <span
+            class="destaque">String</span>. Sendo assim 6 ao todo.
+          <br><br>É possível fazer a conversão de qualquer um desses outros tipos para o tipo string através do método
+          <span class="destaque">toString()</span>.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var booleano = true;
+    var booleanoString = booleano.toString();
+    console.log(booleanoString); // Saída: True
+                    </code>
+                  </pre>
+        <p class="texto">
+          Também é possível obter o mesmo resultado de uma forma diferente, criando um novo objeto usando <span
+            class="destaque">new String(parâmetro)</span>, sendo o parâmetro o elemento que irá ser transformado em
+          string.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var booleano = true;
+    var booleanoString = new String(booleano);
+    console.log(booleanoString); // Saída: True
+                    </code>
+                  </pre>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="titulo">
+          <br>
+          Concatenando strings
+        </h3>
+        <p class="texto">
+          Na programação, a concatenação de strings significa criar uma nova string a partir da junção de duas ou mais
+          strings existentes.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var nome = "André";
+    var sobrenome = "Silva";
+    var nomeCompleto = "Meu nome completo é:" + nome + sobrenome;
+    console.log(nomeCompleto) // Saída: Meu nome Completo é: André Silva
+                    </code>
+                  </pre>
+        <p class="texto">
+          Neste exemplo, uma nova string <span class="destaque">nomeCompleto</span> foi criada a partir da concatenação
+          das strings <span class="destaque">nome</span> e <span class="destaque">sobrenome</span>. A concatenação é
+          feita através do operador de adição <span class="destaque">+</span>.
+          <br><br>Também é possível utilizar os operadores <span class="destaque">+=</span> para fazer a concatenação.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var nome = "André";
+    var saudacao = "Seja bem-vindo(a)";
+    saudacao += nome
+    console.log(saudacao) // Saída: Seja bem-vindo(a) André
+                    </code>
+                  </pre>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="titulo">
+          <br>
+          Interpolando strings (template strings)
+        </h3>
+        <p class="texto">
+          É uma alternativa mais prática para manipular strings sem a necessidade de fazer a concatenação. Usando as
+          chamadas template strings ou templates literais, é possível ter uma maior flexibilidade no trabalho com
+          strings, além de facilitar a escrita e leitura do código.
+          <br><br>Para utilizar template strings, você deve delimitar a string com acento grave `exemplo` em vez de
+          aspas ‘simples’ ou “duplas”. Dessa forma, é possível inserir expressões e variáveis diretamente dentro da
+          string.
+
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                <code class="javascript">
+    var idade = 16;
+    var frase = `Meu nome não é Johnny e eu tenho ${idade} anos de idade`;
+    console.log(frase) // Saída: Meu nome não é Johnny e eu tenho 16 anos de idade
+                </code>
+              </pre>
+        <p class="texto">
+          Neste exemplo, envolvemos a <span class="destaque">frase</span> com o acento grave ` ` em vez das aspas que
+          normalmente usamos por padrão, e dentro da frase usamos a expressão <span class="destaque">${idade}</span>,
+          sem a necessidade da concatenação.
+        </p>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="titulo">
+          <br>
+          Tamanho de uma string
+        </h3>
+        <p class="texto">
+          O método <span class="destaque">length</span> serve para informar o tamanho (número de caracteres) de uma
+          string. <br></p>
+
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var sring = "Hello, World!";
+    var comprimento = string.length;
+    console.log(comprimento) // Saída: 13
+                    </code>
+                  </pre>
+        <p>
+          É importante observar que o <span class="destaque">length</span> conta todos os caracteres presentes na
+          string, incluindo <span class="destaque">espaços em branco</span> e <span class="destaque">pontuação</span>.
+          Ele também conta os <span class="destaque">caracteres especiais</span> e <span class="destaque">acentos</span>
+          de forma individual.
+
+        </p>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="titulo">
+          <br>
+          Acessando a posição de uma string
+        </h3>
+        <p class="texto">
+          Através do método <span class="destaque">charAt()</span> conseguimos acessar um caractere de uma string.
+          Lembrando que, por baixo dos panos, strings são arrays de caracteres, e em cada posição temos o caractere que
+          compõe a string.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                        <code class="javascript">
+        var alunoNota10 = "Germano";
+
+        var comprimento = alunoNota10.length;
+        console.log(comprimento) // Saída: 7
+
+        console.log(alunoNota10.charAt(3)) // Saída: m
+        console.log(alunoNota10[3]) // Saída: m
+                        </code>
+                      </pre>
+        <p class="texto">
+          O nome Germano possui ao todo 7 caracteres, porém a contagem é iniciada pelo número 0. O primeiro caractere de
+          uma string é acessado pelo índice 0, o segundo caractere pelo índice 1 e assim por diante.
+
+          <br><br>G = 0 <br> e = 1 <br> r = 2 <br> <span class="destaque">m = 3</span> <br> a = 4 <br> n = 5 <br> o = 6
+          <br><br>
+
+          A contagem dos caracteres iniciar de 0 ocorre por causa da forma como as strings são armazenadas e acessadas
+          na memória.
+
+        </p>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="titulo">
+          <br>
+          Posição de um caractere dentro da string
+        </h3>
+        <p class="texto">
+          A função <span class="destaque">indexOf()</span> retorna a posição de um caractere dentro da string. Neste
+          caso, basta informar qual caractere deseja saber a posição.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var alunoNota10 = "Germano";
+    console.log(alunoNota10.indexOf("r")) // Saída: 2
+                    </code>
+                  </pre>
+        <p class="texto">
+          G = 0 <br> e = 1 <br> <span class="destaque">r = 2</span> <br> m = 3 <br> a = 4 <br>n = 5 <br> o = 6<br><br>
+
+          <span class="destaque">P.S.:</span> Caso o caractere que se busca na string seja encontrado em mais de uma
+          posição (repetição), será retornada somente a primeira ocorrência.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    const palavra = "Divertidamente";
+    console.log(palavra.indexOf("e")) // Saída: 3
+                    </code>
+                  </pre>
+        <p class="texto">
+          D = 0 <br> i = 1 <br> v = 2 <br> <span class="destaque">e = 3</span> <br> r = 4 <br> t = 5 <br> i = 6 <br> d =
+          7 <br> a = 8 <br> m = 9 <br> <span class="destaque2">e = 10</span> <br> n = 11 <br> t = 12 <br> <span
+            class="destaque2">e = 13</span> <br>
+        </p>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="titulo">
+          <br>
+          Convertendo uma string em letras maiúsculas e/ou minúsculas
+        </h3>
+        <p class="texto">
+          <span class="destaque">toUpperCase()</span> e <span class="destaque">toLowerCase()</span> são duas funções
+          usadas para converter uma string em letras maiúsculas (upper case) ou letras minúsculas (lower case).
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var palavra = "JavaScript";
+    console.log(palavra.toUpperCase()) // Saída: JAVASCRIPT
+    console.log(palavra.toLowerCase()) // Saída: javascript
+                    </code>
+                  </pre>
+        <p class="texto">
+          Estes métodos fazem a manipulação da string como um todo.
+        </p>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="titulo">
+          <br>
+          Extraindo parte de uma string
+        </h3>
+        <p class="texto">
+          A função substring, <span class="destaque">substr()</span> permite que seja feita a extração de parte de uma
+          string.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var frase = "Mergulhando em tecnologia.";
+    Console.log(frase.substr(0,11)) // Saída: Mergulhando
+    
+    Console.log(frase.substr(15)) // Saída: tecnologia.
+    
+                    </code>
+                  </pre>
+        <p class="texto">
+          A função recebe como parâmetro o início e o fim da <span class="destaque">nova string</span> a ser retirada da
+          <span class="destaque">string principal</span>. Na execução do código acima, temos como resultado a palavra
+          <span class="destaque">Mergulhando</span> (primeiro print).
+          <br><br>Já o segundo print, foi especificado que a extração da string iniciaria do índice 15 em diante, o que
+          resulta em: <span class="destaque">tecnologia.</span> (também funciona no método <span
+            class="destaque">slice()</span>).
+          <br><br>Um outro método similar ao substring é o método <span class="destaque">slice()</span>, usado em
+          arrays. Ele retornará parte de uma string, desde que sejam passados os índices de início e de fim.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var frase = "Mergulhando em tecnologia.";
+    Console.log(frase.slice(0,11)) // Saída: Mergulhando
+                    </code>
+                  </pre>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="quadrado">
+        <h3 class="titulo">
+          <br>
+          Substituindo parte de uma string
+        </h3>
+        <p class="texto">
+          Com a função <span class="destaque">replace()</span> temos a possibilidade de substituir parte de uma string
+          por outra. Essa função recebe como parâmetros duas informações: a string que você quer substituir e a string
+          que será colocada no lugar.
+        </p>
+        <pre class="caixa-de-codigo" onclick="copiarCodigo()">
+                    <code class="javascript">
+    var nome = "Flávia";
+    var mensagem = "Feliz Aniversário nomeusuario! Parabéns pelos 15 anos.";
+    console.log(mensagem.replace("nomeusuario", nome)) // Saída: Feliz Aniversário Flávia! Parabéns pelos 15 anos.
+                    </code>
+                  </pre>
+      </div>
+    </div>
+    <br>
+    <br>
+    <script>
+      const text = "\n\n\nimport { Component, OnInit } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\n\n@Component({\n  selector: 'app-infinity-scroll',\n  templateUrl: './infinity-scroll.component.html',\n  styleUrls: ['./infinity-scroll.component.css']\n})\nexport class InfinityScrollComponent implements OnInit {\n\n  // Variáveis\n <p>ola</p>  items: any[] = [];\n  page = 1;\n  loading = false;\n\n  constructor(private http: HttpClient) { }\n\n  ngOnInit() {\n    this.load";
+      const text2 = "\n\n# Create\ndef create(nome, idade):\n    print(\"Criando registro de nome: \", nome, \"e idade: \", idade)\n\n# Read\ndef read(id):\n    print(\"Lendo registro de id: \", id)\n\n# Update\ndef update(id, nome, idade):\n    print(\"Atualizando registro de id: \", id, \"novo nome: \", nome, \"e nova idade: \", idade)\n\n# Delete\ndef delete(id):\n    print(\"Deletando registro de id: \", id)";
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script
+      src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+    <script>
+      hljs.highlightAll();
+
+
+      function createCopyButton(codeElement) {
+        const button = document.createElement('button');
+        button.textContent = 'Copiar Código';
+        button.type = 'button'
+        button.addEventListener('click', () => copyCodeToClipboard(codeElement, button));
+        return button;
+      }
+
+      document.querySelectorAll('pre').forEach((pre) => {
+        const code = pre.querySelector('code');
+        const copyButton = createCopyButton(code);
+        pre.insertAdjacentElement('beforebegin', copyButton);
+      });
+
+      function copyCodeToClipboard2(codeElement, e) {
+        const textArea = document.createElement('textarea');
+        textArea.value = codeElement.innerHTML;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        e.innerText = 'Código copiado 🗸';
+        e.style = 'background-color: green';
+      }
+
+
+      function copyCodeToClipboard(codeElement, e) {
+        const textArea = document.createElement('textarea');
+        textArea.value = codeElement.innerText.replace(/\n{2,}/g, "\n");
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        e.innerText = 'Código copiado 🗸';
+        e.style = 'background-color: green';
+      }
+
+      function escapeHTML(unsafe) {
+        return unsafe
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+    </script>
+</body>
+
+</html>
