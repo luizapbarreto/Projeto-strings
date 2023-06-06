@@ -184,9 +184,11 @@
         </p>
         <pre class="caixa-de-codigo" onclick="copiarCodigo()">
                     <code class="javascript">
-    var booleano = true;
-    var booleanoString = booleano.toString();
-    console.log(booleanoString); // Saída: True
+    var booleano = true
+    console.log(typeof booleano) // Saída: boolean
+                      
+    var booleanoString = booleano.toString()
+    console.log(typeof booleanoString) // Saída: string
                     </code>
                   </pre>
         <p class="texto">
@@ -217,7 +219,7 @@
                     <code class="javascript">
     var nome = "André";
     var sobrenome = "Silva";
-    var nomeCompleto = "Meu nome completo é:" + nome + sobrenome;
+    var nomeCompleto = "Meu nome completo é:" + nome + " " + sobrenome;
     console.log(nomeCompleto) // Saída: Meu nome Completo é: André Silva
                     </code>
                   </pre>
@@ -400,6 +402,8 @@
     Console.log(frase.substr(0,11)) // Saída: Mergulhando
     
     Console.log(frase.substr(15)) // Saída: tecnologia.
+
+    Console.log(frase.slice(0,11)) // Saída: Mergulhando
     
                     </code>
                   </pre>
@@ -434,9 +438,9 @@
         </p>
         <pre class="caixa-de-codigo" onclick="copiarCodigo()">
                     <code class="javascript">
-    var nome = "Flávia";
-    var mensagem = "Feliz Aniversário nomeusuario! Parabéns pelos 15 anos.";
-    console.log(mensagem.replace("nomeusuario", nome)) // Saída: Feliz Aniversário Flávia! Parabéns pelos 15 anos.
+    var nome = "Flavinha";
+    var mensagem = "Feliz Aniversário userName! Parabéns pelos 15 anos.";
+    console.log(mensagem.replace("userName", nome)) // Saída: Feliz Aniversário Flavinha! Parabéns pelos 15 anos.
                     </code>
                   </pre>
       </div>
